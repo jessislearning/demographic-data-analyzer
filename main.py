@@ -10,7 +10,12 @@ from unittest import main
 #main(module='test_module', exit=False)
 df=pd.read_csv("adult.data.csv")
 #print (df["sex"].value_counts())
-df_male = df[df["sex"]=="Male"]
-print (df_male["age"].mean())
+#df_male = df[df["sex"]=="Male"]
+#print(df["education"].unique())
+#print (df_male["age"].mean())
 #print (df.groupby(["race"]).count())#
 #print (df.pd.series.groupby(["race"]).count())
+
+#print % of bachelors
+percentage_bachelors = round(len(df[df["education"]=="Bachelors"])/len(df)*100, 2)
+print(percentage_bachelors)
