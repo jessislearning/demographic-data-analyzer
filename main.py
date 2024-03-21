@@ -27,10 +27,11 @@ main(module='test_module', exit=False)
 #print % of higher education rich - working
 #higher_education = df[df["education"].isin(["Bachelors","Masters","Doctorate"])]
 #lower_education = df[~df["education"].isin(["Bachelors","Masters","Doctorate"])]
-##higher_education_rich = len(higher_education[higher_education["salary"]==">50K"])/len(higher_education)#round(len(higher_education[higher_education["salary"] == ">50K"])/len(higher_education)*100,2)
+#higher_education_rich = len(higher_education[higher_education["salary"]==">50K"])/len(higher_education)#round(len(higher_education[higher_education["salary"] == ">50K"])/len(higher_education)*100,2)
+#higher_education_rich = round(len(higher_education[df.salary == ">50K"].value_counts())/len(higher_education)*100, 1)
 #lower_education_rich = round(len(lower_education[lower_education["salary"] == ">50K"])/len(lower_education)*100,2)
 #print (round(len(df[higher_education])/len(df)*100, 2)) #percentage of higher education grads over df
-#print (higher_education_rich)
+#print (len(higher_education[higher_education["salary"]==">50K"]))
 #print (lower_education_rich)
 
 #min number of hours per week, and how many are rich - working
@@ -42,5 +43,15 @@ main(module='test_module', exit=False)
 #print (rich_percentage)
 
 #Which country has the highest percentage of people who are rich
-#countries = df.groupby("native-country") --- working on this
-#print (countries)
+#countries = df[df["salary"] == ">50K"].groupby("native-country").count()/df.groupby("native-country").count()
+#print (countries.sort_values("salary", ascending=False).index[0])
+#countries = df[df["salary"] == ">50K"]["native-country"].value_counts()/df["native-country"].value_counts()
+#print (countries.sort_values(ascending=False).index[0])
+
+#rich_per_country = df[df["salary"] == ">50K"]["native-country"].value_counts()/df["native-country"].value_counts()
+#highest_earning_country = rich_per_country.idxmax()
+#highest_earning_country_percentage = round(len(df[df["salary"]==">50K"][df["native-country"]==highest_earning_country])/len(df[df["native-country"]==highest_earning_country])*100, 2)
+#print(highest_earning_country_percentage)
+
+#top_IN_occupation = df[df["native-country"]== "India"][df["salary"]==">50K"]["occupation"].value_counts()
+#print(top_IN_occupation.idxmax())
