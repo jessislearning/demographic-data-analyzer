@@ -1,9 +1,15 @@
 # Demographic Data Analyzer
 
-This is the boilerplate for the Demographic Data Analyzer project. Instructions for building your project can be found at https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer
+Demographic Data Analyzer is a Data Analysis with Python project from freeCodecamp. 
+Details and instructions are found here: https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer
 
 -------------------
-A starter code is accessible from the link shown above. I developed the code in Gitpod in order to fetch the following information from the given data.
+A starter code is accessible from the link shown above. 
+The file adult_data.csv contains a table which contains demographic information, including 
+age, gender, race, highest education obtained, salary, occupation, etc. 
+
+
+To goal of the project is to extract the following information from the given data:
 
 1. How many people of each race are represented in this dataset? 
 2. What is the average age of men?
@@ -14,3 +20,5 @@ A starter code is accessible from the link shown above. I developed the code in 
 7. What percentage of the people who work the minimum number of hours per week have a salary of more than 50K?
 8. What country has the highest percentage of people that earn >50K and what is that percentage?
 9. Identify the most popular occupation for those who earn >50K in India.
+
+(The code was developed in Gitpod.io)
